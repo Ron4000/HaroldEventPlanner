@@ -2,7 +2,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
-export default defineConfig({
-  base: '/HaroldEventPlanner/',
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/HaroldEventPlanner/' : '/',
   plugins: [react()],
-})
+}))
